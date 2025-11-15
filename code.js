@@ -208,6 +208,9 @@ function checkPaddleCollision() {
         ball.x = paddle.x + paddle.width;
     }
 }
+// funkcija koja provjerava sudare loptice s ciglama
+// provjerava se sudar, prvo za vrhove cigle (u smjeru gornji lijevi, gornji desni, donji lijevi, donji desni), zatim za gornju stranu cigle, lijevu stranu, donju stranu i desnu stranu
+// prilikom sudara, mijenjaju se smjerovi kretanja loptice po x i y osi ovisno o točki sudara, broj preostalih cigli se smanjuje za 1, rezultat se povećava za 1, te se cigla označava kao uništena (destroyed = true) kako se više ne bi iscrtavala
 function checkbrickCollision(b) {
     if (Math.sign(ball.speedX) === 1) tmpx = Math.abs(tmpx);
     if (Math.sign(ball.speedX) === -1) tmpx = Math.abs(tmpx) * -1;
